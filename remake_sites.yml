@@ -15,6 +15,22 @@ targets:
       - report/puertorico.pdf
       - report/costarica.md
       - report/costarica.pdf
+  checks:
+    depends:
+      - report/check_argentina.md
+      - report/check_argentina.pdf
+      - report/check_cardoso.md
+      - report/check_cardoso.pdf
+      - report/check_colombia.md
+      - report/check_colombia.pdf
+      - report/check_frenchguiana.md
+      - report/check_frenchguiana.pdf
+      - report/check_macae.md
+      - report/check_macae.pdf
+      - report/check_puertorico.md
+      - report/check_puertorico.pdf
+      - report/check_costarica.md
+      - report/check_costarica.pdf
 
 ## list the names of sites
   argentina:
@@ -126,5 +142,95 @@ targets:
     
   report/costarica.pdf:
     command: render("report/costarica.md", output_format = I("pdf_document"))
+    
+
+## MOREOVER let us have pdf reports for each site
+## that these might be printed out and given each to 
+## a Data Manager, for Validation.
+
+  report/check_argentina.md:
+    knitr:
+      input: report/check.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: argentina
+      - physical
+    
+  report/check_cardoso.md:
+    knitr:
+      input: report/check.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: cardoso
+      - physical
+    
+  report/check_colombia.md:
+    knitr:
+      input: report/check.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: colombia
+      - physical
+    
+  report/check_frenchguiana.md:
+    knitr:
+      input: report/check.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: frenchguiana
+      - physical
+    
+  report/check_macae.md:
+    knitr:
+      input: report/check.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: macae
+      - physical
+    
+  report/check_puertorico.md:
+    knitr:
+      input: report/check.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: puertorico
+      - physical
+    
+  report/check_costarica.md:
+    knitr:
+      input: report/check.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: costarica
+      - physical
+    
+
+  report/check_argentina.pdf:
+    command: render("report/check_argentina.md", output_format = I("pdf_document"))
+    
+  report/check_cardoso.pdf:
+    command: render("report/check_cardoso.md", output_format = I("pdf_document"))
+    
+  report/check_colombia.pdf:
+    command: render("report/check_colombia.md", output_format = I("pdf_document"))
+    
+  report/check_frenchguiana.pdf:
+    command: render("report/check_frenchguiana.md", output_format = I("pdf_document"))
+    
+  report/check_macae.pdf:
+    command: render("report/check_macae.md", output_format = I("pdf_document"))
+    
+  report/check_puertorico.pdf:
+    command: render("report/check_puertorico.md", output_format = I("pdf_document"))
+    
+  report/check_costarica.pdf:
+    command: render("report/check_costarica.md", output_format = I("pdf_document"))
     
 

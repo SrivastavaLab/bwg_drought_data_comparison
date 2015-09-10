@@ -5,6 +5,12 @@ targets:
       - report/{{site_name}}.md
       - report/{{site_name}}.pdf
 {{/site_names}}
+  checks:
+    depends:
+{{#site_names}}
+      - report/check_{{site_name}}.md
+      - report/check_{{site_name}}.pdf
+{{/site_names}}    
 
 ## list the names of sites
 {{#site_names}}
@@ -31,5 +37,28 @@ targets:
 {{#site_names}}
   report/{{site_name}}.pdf:
     command: render("report/{{site_name}}.md", output_format = I("pdf_document"))
+    
+{{/site_names}}
+
+## MOREOVER let us have pdf reports for each site
+## that these might be printed out and given each to 
+## a Data Manager, for Validation.
+
+{{#site_names}}
+  report/check_{{site_name}}.md:
+    knitr:
+      input: report/check.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: {{site_name}}
+      - physical
+    
+{{/site_names}}
+
+{{#site_names}}
+  report/check_{{site_name}}.pdf:
+    command: render("report/check_{{site_name}}.md", output_format = I("pdf_document"))
+    depends: report/tabletemplate.tex
     
 {{/site_names}}

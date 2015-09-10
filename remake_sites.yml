@@ -148,7 +148,6 @@ targets:
     knitr:
       input: report/template.Rmd
       chdir: true
-      auto_figure_prefix: true
     depends:
       - dataset: argentina
       - physical
@@ -159,7 +158,6 @@ targets:
     knitr:
       input: report/template.Rmd
       chdir: true
-      auto_figure_prefix: true
     depends:
       - dataset: cardoso
       - physical
@@ -170,7 +168,6 @@ targets:
     knitr:
       input: report/template.Rmd
       chdir: true
-      auto_figure_prefix: true
     depends:
       - dataset: colombia
       - physical
@@ -181,7 +178,6 @@ targets:
     knitr:
       input: report/template.Rmd
       chdir: true
-      auto_figure_prefix: true
     depends:
       - dataset: frenchguiana
       - physical
@@ -192,7 +188,6 @@ targets:
     knitr:
       input: report/template.Rmd
       chdir: true
-      auto_figure_prefix: true
     depends:
       - dataset: macae
       - physical
@@ -203,7 +198,6 @@ targets:
     knitr:
       input: report/template.Rmd
       chdir: true
-      auto_figure_prefix: true
     depends:
       - dataset: puertorico
       - physical
@@ -214,7 +208,6 @@ targets:
     knitr:
       input: report/template.Rmd
       chdir: true
-      auto_figure_prefix: true
     depends:
       - dataset: costarica
       - physical
@@ -226,24 +219,45 @@ targets:
 
   report/argentina.pdf:
     command: render("report/argentina.md", output_format = I("pdf_document"))
+    depends:
+      - report/figure/size_pairs_argentina.png
+      - report/figure/chem_ini_pairs_argentina.png
     
   report/cardoso.pdf:
     command: render("report/cardoso.md", output_format = I("pdf_document"))
+    depends:
+      - report/figure/size_pairs_cardoso.png
+      - report/figure/chem_ini_pairs_cardoso.png
     
   report/colombia.pdf:
     command: render("report/colombia.md", output_format = I("pdf_document"))
+    depends:
+      - report/figure/size_pairs_colombia.png
+      - report/figure/chem_ini_pairs_colombia.png
     
   report/frenchguiana.pdf:
     command: render("report/frenchguiana.md", output_format = I("pdf_document"))
+    depends:
+      - report/figure/size_pairs_frenchguiana.png
+      - report/figure/chem_ini_pairs_frenchguiana.png
     
   report/macae.pdf:
     command: render("report/macae.md", output_format = I("pdf_document"))
+    depends:
+      - report/figure/size_pairs_macae.png
+      - report/figure/chem_ini_pairs_macae.png
     
   report/puertorico.pdf:
     command: render("report/puertorico.md", output_format = I("pdf_document"))
+    depends:
+      - report/figure/size_pairs_puertorico.png
+      - report/figure/chem_ini_pairs_puertorico.png
     
   report/costarica.pdf:
     command: render("report/costarica.md", output_format = I("pdf_document"))
+    depends:
+      - report/figure/size_pairs_costarica.png
+      - report/figure/chem_ini_pairs_costarica.png
     
 
 ## MOREOVER let us have pdf reports for each site

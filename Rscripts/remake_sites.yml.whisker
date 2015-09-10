@@ -45,7 +45,6 @@ targets:
     knitr:
       input: report/template.Rmd
       chdir: true
-      auto_figure_prefix: true
     depends:
       - dataset: {{site_name}}
       - physical
@@ -59,6 +58,9 @@ targets:
 {{#site_names}}
   report/{{site_name}}.pdf:
     command: render("report/{{site_name}}.md", output_format = I("pdf_document"))
+    depends:
+      - report/figure/size_pairs_{{site_name}}.png
+      - report/figure/chem_ini_pairs_{{site_name}}.png
     
 {{/site_names}}
 

@@ -1,4 +1,3 @@
-
 # Data from colombia
 
 Here is a simple plot:
@@ -45,25 +44,5 @@ add_theme_to_ggpairs(sizepairs)
 
 ![plot of chunk chem_initial](figure/colombia__chem_initial-1.png) 
 
-#### Chemical variables to check
 
-
-```r
-set.seed(4812)
-physical %>% 
-  filter(site == dataset) %>% 
-  select(site_brom.id, turbidity.initial:chlorophyll.initial) %>% 
-  sample_n(3) %>% 
-  mutate(`*CONFIRMED*` = "    ") %>% 
-  as.data.frame %>% 
-  kable
-```
-
-
-
-|site_brom.id | turbidity.initial| oxygen.percent.initial| oxygen.conc.initial| ph.initial| chlorophyll.initial|*CONFIRMED* |
-|:------------|-----------------:|----------------------:|-------------------:|----------:|-------------------:|:-----------|
-|colombia_11  |             302.7|                     NA|                  NA|        4.8|                7085|            |
-|colombia_9   |             298.5|                     NA|                  NA|        5.0|                6408|            |
-|colombia_10  |             262.2|                     NA|                  NA|        4.2|                3811|            |
 

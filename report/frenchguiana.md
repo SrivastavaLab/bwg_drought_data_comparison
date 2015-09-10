@@ -1,4 +1,3 @@
-
 # Data from frenchguiana
 
 Here is a simple plot:
@@ -45,25 +44,5 @@ add_theme_to_ggpairs(sizepairs)
 
 ![plot of chunk chem_initial](figure/frenchguiana__chem_initial-1.png) 
 
-#### Chemical variables to check
 
-
-```r
-set.seed(4812)
-physical %>% 
-  filter(site == dataset) %>% 
-  select(site_brom.id, turbidity.initial:chlorophyll.initial) %>% 
-  sample_n(3) %>% 
-  mutate(`*CONFIRMED*` = "    ") %>% 
-  as.data.frame %>% 
-  kable
-```
-
-
-
-|site_brom.id    | turbidity.initial| oxygen.percent.initial| oxygen.conc.initial| ph.initial| chlorophyll.initial|*CONFIRMED* |
-|:---------------|-----------------:|----------------------:|-------------------:|----------:|-------------------:|:-----------|
-|frenchguiana_35 |                NA|                     NA|                  NA|         NA|                  NA|            |
-|frenchguiana_33 |                NA|                     NA|                  NA|         NA|                  NA|            |
-|frenchguiana_79 |                NA|                     NA|                  NA|         NA|                  NA|            |
 

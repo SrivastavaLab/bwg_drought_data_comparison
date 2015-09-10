@@ -1,4 +1,3 @@
-
 # Data from costarica
 
 Here is a simple plot:
@@ -45,25 +44,5 @@ add_theme_to_ggpairs(sizepairs)
 
 ![plot of chunk chem_initial](figure/costarica__chem_initial-1.png) 
 
-#### Chemical variables to check
 
-
-```r
-set.seed(4812)
-physical %>% 
-  filter(site == dataset) %>% 
-  select(site_brom.id, turbidity.initial:chlorophyll.initial) %>% 
-  sample_n(3) %>% 
-  mutate(`*CONFIRMED*` = "    ") %>% 
-  as.data.frame %>% 
-  kable
-```
-
-
-
-|site_brom.id | turbidity.initial| oxygen.percent.initial| oxygen.conc.initial| ph.initial| chlorophyll.initial|*CONFIRMED* |
-|:------------|-----------------:|----------------------:|-------------------:|----------:|-------------------:|:-----------|
-|costarica_4  |             97.94|                     66|                 5.5|       4.85|            384.8067|            |
-|costarica_36 |             89.35|                     60|                 5.0|       6.09|            288.6846|            |
-|costarica_10 |            113.60|                     61|                 5.1|       6.07|            461.3436|            |
 

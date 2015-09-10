@@ -5,12 +5,14 @@ targets:
       - report/{{site_name}}.md
 {{/site_names}}
 
+## list the names of sites
 {{#site_names}}
   {{site_name}}:
     command: return(I("{{site_name}}"))
     
 {{/site_names}}
-    
+
+## create the knitr reports.
 {{#site_names}}
   report/{{site_name}}.md:
     knitr:

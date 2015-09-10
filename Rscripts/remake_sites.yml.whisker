@@ -1,0 +1,24 @@
+targets:
+  reports:
+    depends:
+{{#site_names}}
+      - report/{{site_name}}.md
+{{/site_names}}
+
+{{#site_names}}
+  {{site_name}}:
+    command: return(I("{{site_name}}"))
+    
+{{/site_names}}
+    
+{{#site_names}}
+  report/{{site_name}}.md:
+    knitr:
+      input: report/template.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: {{site_name}}
+      - physical
+    
+{{/site_names}}

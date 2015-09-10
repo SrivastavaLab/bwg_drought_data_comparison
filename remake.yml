@@ -2,99 +2,18 @@ packages:
   - ggplot2
   - dplyr
   - bwgtools
-  
+
 sources:
   - Rscripts/offline.R
-
+  
 targets:
   all:
     depends:
-      - report/argentina.md
-      - report/cardoso.md
-      - report/colombia.md
-      - report/frenchguiana.md
-      - report/macae.md
-      - report/puertorico.md
-      - report/costarica.md
+      - reports
 
-  ar:
-    command: return(I("argentina"))
-    
-  ca:
-    command: return(I("cardoso"))
+  physical:
+    command: combine_tab(sheetname = I("bromeliad.physical"))
 
-  co:
-    command: return(I("colombia"))
 
-  fg:
-    command: return(I("frenchguiana"))
-
-  ma:
-    command: return(I("macae"))
-
-  pr:
-    command: return(I("puertorico"))
-
-  cr:
-    command: return(I("costarica"))
-
-  report/argentina.md:
-    knitr:
-      input: report/template.Rmd
-      chdir: true
-      auto_figure_prefix: true
-    depends:
-      - dataset: ar
-
-  report/cardoso.md:
-    knitr:
-      input: report/template.Rmd
-      chdir: true
-      auto_figure_prefix: true
-    depends:
-      - dataset: ca
-
-  report/colombia.md:
-    knitr:
-      input: report/template.Rmd
-      chdir: true
-      auto_figure_prefix: true
-    depends:
-      - dataset: co
-    cleanup_level: purge
-
-  report/frenchguiana.md:
-    knitr:
-      input: report/template.Rmd
-      chdir: true
-      auto_figure_prefix: true
-    depends:
-      - dataset: fg
-    cleanup_level: purge
-      
-  report/macae.md:
-    knitr:
-      input: report/template.Rmd
-      chdir: true
-      auto_figure_prefix: true
-    depends:
-      - dataset: ma
-    cleanup_level: purge
-      
-  report/puertorico.md:
-    knitr:
-      input: report/template.Rmd
-      chdir: true
-      auto_figure_prefix: true
-    depends:
-      - dataset: pr
-    cleanup_level: purge
-      
-  report/costarica.md:
-    knitr:
-      input: report/template.Rmd
-      chdir: true
-      auto_figure_prefix: true
-    depends:
-      - dataset: cr
-    cleanup_level: purge
+include:
+  - remake_sites.yml

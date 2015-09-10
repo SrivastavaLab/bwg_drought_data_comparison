@@ -1,2 +1,12 @@
 
 # Data from `r dataset`
+
+Here is a simple plot:
+```{r}
+physical %>% 
+  mutate(focal = ifelse(site == dataset, "focal", "other")) %>% 
+  ggplot(aes(x = leaf.number, y = maxvol, colour = focal)) +
+  geom_point()
+  
+```
+

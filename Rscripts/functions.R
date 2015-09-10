@@ -42,3 +42,12 @@ get_terr_abd <- function(){
     group_by(site, site_brom.id) %>% 
     summarize(abundance = sum(abundance))
 }
+
+plot_size <- function(.physical, .dataset){
+  ggp <- .physical %>% 
+    mutate(focal = ifelse(site == dataset, dataset, "all")) %>% 
+    select(maxvol:catchment.area, focal) %>% 
+    ggpairs(colour = "focal")
+  
+  add_theme_to_ggpairs(ggp)
+}

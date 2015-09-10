@@ -8,7 +8,7 @@ packages:
   - xtable
 
 sources:
-  - Rscripts/offline.R
+  - Rscripts/functions.R
   
 targets:
   all:

@@ -18,7 +18,12 @@ targets:
 
   physical:
     command: combine_tab(sheetname = I("bromeliad.physical"))
-    cleanup_level: purge
+    
+  aqua_abd:
+    command: get_aqua_abd()
+    
+  terr_abd:
+    command: get_terr_abd()
 
 
 include:

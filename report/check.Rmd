@@ -3,6 +3,7 @@ fontsize: 15pt
 output:
   pdf_document
 ---
+
 ```{r, echo=FALSE}
 table_of_three <- function(data_to_check){
   three_data <- data_to_check %>% 
@@ -29,9 +30,15 @@ table_of_three <- function(data_to_check){
 site_phys <- physical %>% 
   filter(site == dataset)
 
+aqua <- aqua_abd %>% 
+  filter(site == dataset)
+
+terr <- terr_abd %>% 
+  filter(site == dataset)
+
 ```
 
-# Data from `r dataset`
+# Confirmation Data from site **`r dataset`**
 
 These data were accessed on `r format(Sys.time(), '%d %B %Y')`
 
@@ -128,5 +135,20 @@ set.seed(4812)
 site_phys %>% 
   select(site_brom.id,
          n15.bromeliad.final:final.bromeliad.percentc) %>%
+  table_of_three
+```
+
+## Final Abundance of Aquatic Insects
+
+```{r echo = FALSE, results='asis'}
+set.seed(4812)
+aqua %>%
+  table_of_three
+```
+
+## Final Abundance of Terrestrial Insects
+```{r echo = FALSE, results='asis'}
+set.seed(4812)
+terr %>%
   table_of_three
 ```

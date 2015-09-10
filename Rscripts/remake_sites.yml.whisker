@@ -53,12 +53,13 @@ targets:
     depends:
       - dataset: {{site_name}}
       - physical
+      - aqua_abd
+      - terr_abd
     
 {{/site_names}}
 
 {{#site_names}}
   report/check_{{site_name}}.pdf:
     command: render("report/check_{{site_name}}.md", output_format = I("pdf_document"))
-    depends: report/tabletemplate.tex
     
 {{/site_names}}

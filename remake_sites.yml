@@ -156,6 +156,8 @@ targets:
     depends:
       - dataset: argentina
       - physical
+      - aqua_abd
+      - terr_abd
     
   report/check_cardoso.md:
     knitr:
@@ -165,6 +167,8 @@ targets:
     depends:
       - dataset: cardoso
       - physical
+      - aqua_abd
+      - terr_abd
     
   report/check_colombia.md:
     knitr:
@@ -174,6 +178,8 @@ targets:
     depends:
       - dataset: colombia
       - physical
+      - aqua_abd
+      - terr_abd
     
   report/check_frenchguiana.md:
     knitr:
@@ -183,6 +189,8 @@ targets:
     depends:
       - dataset: frenchguiana
       - physical
+      - aqua_abd
+      - terr_abd
     
   report/check_macae.md:
     knitr:
@@ -192,6 +200,8 @@ targets:
     depends:
       - dataset: macae
       - physical
+      - aqua_abd
+      - terr_abd
     
   report/check_puertorico.md:
     knitr:
@@ -201,6 +211,8 @@ targets:
     depends:
       - dataset: puertorico
       - physical
+      - aqua_abd
+      - terr_abd
     
   report/check_costarica.md:
     knitr:
@@ -210,6 +222,8 @@ targets:
     depends:
       - dataset: costarica
       - physical
+      - aqua_abd
+      - terr_abd
     
 
   report/check_argentina.pdf:

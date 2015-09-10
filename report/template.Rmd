@@ -1,12 +1,12 @@
-# Data from `r dataset`
+# Data from `r dataset`, compared to all other sites
 
-Here is a simple plot:
-```{r}
-physical %>% 
-  mutate(focal = ifelse(site == dataset, "focal", "other")) %>% 
-  ggplot(aes(x = leaf.number, y = maxvol, colour = focal)) +
-  geom_point()
-  
+This document shows how data from **`r dataset`** compares to data from all other sites. This comparison is useful for confirming that units, outliers and variation is similar everywhere.
+
+These data were accessed on `r format(Sys.time(), '%d %B %Y')`
+
+
+```{r echo=FALSE}
+#knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE)
 ```
 
 ## Size variables

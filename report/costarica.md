@@ -25,12 +25,23 @@ sizepairs <- physical %>%
   select(maxvol:catchment.area, focal) %>% 
   ggpairs(colour = "focal")
 
-bw1 <- add_to_plots(sizepairs, scale_fill_manual(values=c("darkblue","darkorange")))
-
-bw2 <- add_to_plots(bw1, scale_colour_manual(values=c("darkblue","darkorange")))
-
-bw2
+add_theme_to_ggpairs(sizepairs)
 ```
 
 ![plot of chunk sizes](figure/costarica__sizes-1.png) 
+
+
+### Chemical variables
+
+
+```r
+sizepairs <- physical %>% 
+  mutate(focal = ifelse(site == dataset, dataset, "all")) %>% 
+  select(turbidity.initial:chlorophyll.initial, focal) %>% 
+  ggpairs(colour = "focal")
+
+add_theme_to_ggpairs(sizepairs)
+```
+
+![plot of chunk chem_initial](figure/costarica__chem_initial-1.png) 
 

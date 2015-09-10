@@ -12,7 +12,7 @@ physical %>%
 
 ### Size variables
 
-```{r warning=FALSE}
+```{r sizes, warning=FALSE, fig.height=7, fig.width=7}
 physical %>% 
   mutate(focal = ifelse(site == dataset, dataset, "other")) %>% 
   select(maxvol:catchment.area, focal) %>% 

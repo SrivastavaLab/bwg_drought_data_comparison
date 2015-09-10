@@ -37,5 +37,5 @@ physical %>%
 ## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
 ```
 
-![plot of chunk unnamed-chunk-2](figure/colombia__unnamed-chunk-2-1.png) 
+![plot of chunk sizes](figure/colombia__sizes-1.png) 
 

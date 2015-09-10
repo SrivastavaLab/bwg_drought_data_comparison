@@ -1,0 +1,97 @@
+targets:
+  reports:
+    depends:
+      - report/argentina.md
+      - report/cardoso.md
+      - report/colombia.md
+      - report/frenchguiana.md
+      - report/macae.md
+      - report/puertorico.md
+      - report/costarica.md
+
+  argentina:
+    command: return(I("argentina"))
+    
+  cardoso:
+    command: return(I("cardoso"))
+    
+  colombia:
+    command: return(I("colombia"))
+    
+  frenchguiana:
+    command: return(I("frenchguiana"))
+    
+  macae:
+    command: return(I("macae"))
+    
+  puertorico:
+    command: return(I("puertorico"))
+    
+  costarica:
+    command: return(I("costarica"))
+    
+    
+  report/argentina.md:
+    knitr:
+      input: report/template.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: argentina
+      - physical
+    
+  report/cardoso.md:
+    knitr:
+      input: report/template.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: cardoso
+      - physical
+    
+  report/colombia.md:
+    knitr:
+      input: report/template.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: colombia
+      - physical
+    
+  report/frenchguiana.md:
+    knitr:
+      input: report/template.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: frenchguiana
+      - physical
+    
+  report/macae.md:
+    knitr:
+      input: report/template.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: macae
+      - physical
+    
+  report/puertorico.md:
+    knitr:
+      input: report/template.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: puertorico
+      - physical
+    
+  report/costarica.md:
+    knitr:
+      input: report/template.Rmd
+      chdir: true
+      auto_figure_prefix: true
+    depends:
+      - dataset: costarica
+      - physical
+    
+

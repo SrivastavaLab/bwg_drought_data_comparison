@@ -20,21 +20,16 @@ physical %>%
 
 
 ```r
-physical %>% 
-  mutate(focal = ifelse(site == dataset, dataset, "other")) %>% 
+sizepairs <- physical %>% 
+  mutate(focal = ifelse(site == dataset, dataset, "all")) %>% 
   select(maxvol:catchment.area, focal) %>% 
-  GGally::ggpairs(colour = "focal")
-```
+  ggpairs(colour = "focal")
 
-```
-## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
-## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
-## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
-## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
-## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
-## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
-## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
-## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
+bw1 <- add_to_plots(sizepairs, scale_fill_manual(values=c("darkblue","darkorange")))
+
+bw2 <- add_to_plots(bw1, scale_colour_manual(values=c("darkblue","darkorange")))
+
+bw2
 ```
 
 ![plot of chunk sizes](figure/frenchguiana__sizes-1.png) 

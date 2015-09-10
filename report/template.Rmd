@@ -12,10 +12,16 @@ physical %>%
 
 ### Size variables
 
-```{r sizes, warning=FALSE, fig.height=10, fig.width=10}
-physical %>% 
-  mutate(focal = ifelse(site == dataset, dataset, "other")) %>% 
+```{r sizes, warning=FALSE, message=FALSE, fig.height=10, fig.width=10}
+sizepairs <- physical %>% 
+  mutate(focal = ifelse(site == dataset, dataset, "all")) %>% 
   select(maxvol:catchment.area, focal) %>% 
-  GGally::ggpairs(colour = "focal")
+  ggpairs(colour = "focal")
+
+bw1 <- add_to_plots(sizepairs, scale_fill_manual(values=c("darkblue","darkorange")))
+
+bw2 <- add_to_plots(bw1, scale_colour_manual(values=c("darkblue","darkorange")))
+
+bw2
 ```
 

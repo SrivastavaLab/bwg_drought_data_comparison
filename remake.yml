@@ -2,6 +2,7 @@ packages:
   - ggplot2
   - dplyr
   - bwgtools
+  - GGally
 
 sources:
   - Rscripts/offline.R

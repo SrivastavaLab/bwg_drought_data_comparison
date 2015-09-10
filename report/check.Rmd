@@ -1,8 +1,35 @@
 ---
-fontsize: 12pt
+fontsize: 15pt
 output:
   pdf_document
 ---
+```{r, echo=FALSE}
+table_of_three <- function(data_to_check){
+  three_data <- data_to_check %>% 
+    sample_n(3) %>% 
+    mutate(CONFIRMED = "    ") %>% 
+    as.data.frame
+  
+  boldednames <- three_data
+  
+  #names(boldednames) <- sprintf("\\textbf{%s}", names(boldednames))
+  
+  boldednames %>% 
+  xtable %>% 
+  print(type = 'latex',
+        #sanitize.text.function = identity,
+          # tabular.environment = "longtable", 
+          hline.after = 1:3,  # note we count the lines here.
+          floating = FALSE, include.rownames = FALSE,
+          add.to.row = list(pos = list(0),
+                            command = c("\\hline ")),
+          comment = FALSE)
+} 
+
+site_phys <- physical %>% 
+  filter(site == dataset)
+
+```
 
 # Data from `r dataset`
 
@@ -10,15 +37,11 @@ These data were accessed on `r format(Sys.time(), '%d %B %Y')`
 
 ## Size
 
-```{r echo = FALSE}
+```{r echo = FALSE, results='asis'}
 set.seed(4812)
-physical %>% 
-  filter(site == dataset) %>% 
+site_phys %>% 
   select(site_brom.id, maxvol:catchment.area) %>% 
-  sample_n(3) %>% 
-  mutate(`*CONFIRMED*` = "    ") %>% 
-  as.data.frame %>% 
-  kable
+  table_of_three
 ```
 
 
@@ -26,17 +49,84 @@ physical %>%
 
 ```{r echo = FALSE, results='asis'}
 set.seed(4812)
-physical %>% 
-  filter(site == dataset) %>% 
-  select(site_brom.id, turbidity.initial:chlorophyll.initial) %>% 
-  sample_n(3) %>% 
-  mutate(CONFIRMED = "    ") %>% 
-  as.data.frame %>% 
-  xtable %>% 
-  print(type = 'latex',
-          hline.after = 1:2,  # note we count the lines here.
-          floating = FALSE)
+site_phys %>% 
+  select(site_brom.id, turbidity.initial:oxygen.conc.initial) %>% 
+  table_of_three
 ```
 
 
+```{r echo = FALSE, results='asis'}
+set.seed(4812)
+site_phys %>% 
+  select(site_brom.id, ph.initial:chlorophyll.initial) %>% 
+  table_of_three
+```
 
+## Initial Leafpacks
+```{r echo = FALSE, results='asis'}
+set.seed(4812)
+site_phys %>% 
+  select(site_brom.id,
+         leafpack1.species1.mass.initial:leafpack2.species1.mass.initial) %>%
+  table_of_three
+```
+
+```{r echo = FALSE, results='asis'}
+set.seed(4812)
+site_phys %>% 
+  select(site_brom.id,
+         leafpack1.species2.mass.initial:leafpack2.species2.mass.initial) %>%
+  table_of_three
+```
+
+## Final Chemistry
+```{r echo = FALSE, results='asis'}
+set.seed(4812)
+site_phys %>% 
+  select(site_brom.id,
+         co2.final:turbidity.final) %>%
+  table_of_three
+```
+
+
+```{r echo = FALSE, results='asis'}
+set.seed(4812)
+site_phys %>% 
+  select(site_brom.id,
+         oxygen.percent.final:chlorophyll.final) %>%
+  table_of_three
+```
+
+## Final Leafpacks
+```{r echo = FALSE, results='asis'}
+set.seed(4812)
+site_phys %>% 
+  select(site_brom.id,
+         leafpack1.species1.mass.final:leafpack2.species1.mass.final) %>%
+  table_of_three
+```
+
+```{r echo = FALSE, results='asis'}
+set.seed(4812)
+site_phys %>% 
+  select(site_brom.id,
+         leafpack1.species2.mass.final:leafpack2.species2.mass.final) %>%
+  table_of_three
+```
+
+## Final Ecosystem
+```{r echo = FALSE, results='asis'}
+set.seed(4812)
+site_phys %>% 
+  select(site_brom.id,
+         water.volume.final:fpom.final) %>%
+  table_of_three
+```
+
+```{r echo = FALSE, results='asis'}
+set.seed(4812)
+site_phys %>% 
+  select(site_brom.id,
+         n15.bromeliad.final:final.bromeliad.percentc) %>%
+  table_of_three
+```

@@ -10,3 +10,13 @@ physical %>%
   
 ```
 
+### Size variables
+
+```{r warning=FALSE}
+physical %>% 
+  mutate(focal = ifelse(site == dataset, dataset, "other")) %>% 
+  select(maxvol:catchment.area, focal) %>% 
+  GGally::ggpairs(colour = "focal")
+  
+```
+

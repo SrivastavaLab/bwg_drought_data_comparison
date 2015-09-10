@@ -12,11 +12,10 @@ physical %>%
 
 ### Size variables
 
-```{r sizes, warning=FALSE, fig.height=7, fig.width=7}
+```{r sizes, warning=FALSE, fig.height=8, fig.width=8}
 physical %>% 
   mutate(focal = ifelse(site == dataset, dataset, "other")) %>% 
   select(maxvol:catchment.area, focal) %>% 
   GGally::ggpairs(colour = "focal")
-  
 ```
 

@@ -22,7 +22,7 @@ add_theme_to_ggpairs(sizepairs)
 ```
 
 
-### Chemical variables
+### Chemical variables -- initial
 
 ```{r chem_initial, warning=FALSE, message=FALSE, fig.height=10, fig.width=10}
 sizepairs <- physical %>% 

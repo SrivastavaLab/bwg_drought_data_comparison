@@ -3,6 +3,7 @@ packages:
   - dplyr
   - bwgtools
   - GGally
+  - rmarkdown
 
 sources:
   - Rscripts/offline.R

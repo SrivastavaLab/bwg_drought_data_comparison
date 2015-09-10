@@ -31,7 +31,7 @@ add_theme_to_ggpairs(sizepairs)
 ![plot of chunk sizes](figure/colombia__sizes-1.png) 
 
 
-### Chemical variables
+### Chemical variables -- initial
 
 
 ```r

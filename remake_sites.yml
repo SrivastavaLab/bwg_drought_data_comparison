@@ -2,13 +2,21 @@ targets:
   reports:
     depends:
       - report/argentina.md
+      - report/argentina.pdf
       - report/cardoso.md
+      - report/cardoso.pdf
       - report/colombia.md
+      - report/colombia.pdf
       - report/frenchguiana.md
+      - report/frenchguiana.pdf
       - report/macae.md
+      - report/macae.pdf
       - report/puertorico.md
+      - report/puertorico.pdf
       - report/costarica.md
+      - report/costarica.pdf
 
+## list the names of sites
   argentina:
     command: return(I("argentina"))
     
@@ -30,7 +38,8 @@ targets:
   costarica:
     command: return(I("costarica"))
     
-    
+
+## create the knitr reports.
   report/argentina.md:
     knitr:
       input: report/template.Rmd
@@ -93,5 +102,29 @@ targets:
     depends:
       - dataset: costarica
       - physical
+    
+
+## let us have PDFs!
+
+  report/argentina.pdf:
+    command: render("report/argentina.md", output_format = I("pdf_document"))
+    
+  report/cardoso.pdf:
+    command: render("report/cardoso.md", output_format = I("pdf_document"))
+    
+  report/colombia.pdf:
+    command: render("report/colombia.md", output_format = I("pdf_document"))
+    
+  report/frenchguiana.pdf:
+    command: render("report/frenchguiana.md", output_format = I("pdf_document"))
+    
+  report/macae.pdf:
+    command: render("report/macae.md", output_format = I("pdf_document"))
+    
+  report/puertorico.pdf:
+    command: render("report/puertorico.md", output_format = I("pdf_document"))
+    
+  report/costarica.pdf:
+    command: render("report/costarica.md", output_format = I("pdf_document"))
     
 

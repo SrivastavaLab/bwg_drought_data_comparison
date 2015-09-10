@@ -3,6 +3,7 @@ targets:
     depends:
 {{#site_names}}
       - report/{{site_name}}.md
+      - report/{{site_name}}.pdf
 {{/site_names}}
 
 ## list the names of sites
@@ -22,5 +23,13 @@ targets:
     depends:
       - dataset: {{site_name}}
       - physical
+    
+{{/site_names}}
+
+## let us have PDFs!
+
+{{#site_names}}
+  report/{{site_name}}.pdf:
+    command: render("report/{{site_name}}.md", output_format = I("pdf_document"))
     
 {{/site_names}}

@@ -28,3 +28,17 @@ add_theme_to_ggpairs <- function(pairs_fig){
   
   return(bw2)
 }
+
+
+get_aqua_abd <- function(){
+  combine_tab(sheetname = I("bromeliad.final.inverts")) %>% 
+    group_by(site, site_brom.id) %>% 
+    summarize(abundance = sum(abundance))
+}
+
+
+get_terr_abd <- function(){
+  combine_tab(sheetname = I("bromeliad.terrestrial")) %>% 
+    group_by(site, site_brom.id) %>% 
+    summarize(abundance = sum(abundance))
+}

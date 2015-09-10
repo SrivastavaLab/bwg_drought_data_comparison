@@ -9,12 +9,10 @@ These data were accessed on 10 September 2015
 
 ## Size variables
 
-![plot of chunk sizes](figure/puertorico__sizes-1.png) 
+![img](figure/size_pairs_puertorico.png)
 
 
 ## Chemical variables -- initial
 
-![plot of chunk chem_initial](figure/puertorico__chem_initial-1.png) 
-
-
+![img](figure/chem_ini_pairs_puertorico.png)
 

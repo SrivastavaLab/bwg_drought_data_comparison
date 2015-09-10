@@ -11,26 +11,10 @@ These data were accessed on `r format(Sys.time(), '%d %B %Y')`
 
 ## Size variables
 
-```{r sizes, warning=FALSE, message=FALSE, fig.height=10, fig.width=10}
-sizepairs <- physical %>% 
-  mutate(focal = ifelse(site == dataset, dataset, "all")) %>% 
-  select(maxvol:catchment.area, focal) %>% 
-  ggpairs(colour = "focal")
-
-add_theme_to_ggpairs(sizepairs)
-```
+`r sprintf("![img](figure/size_pairs_%s.png)", dataset)`
 
 
 ## Chemical variables -- initial
 
-```{r chem_initial, warning=FALSE, message=FALSE, fig.height=10, fig.width=10}
-sizepairs <- physical %>% 
-  mutate(focal = ifelse(site == dataset, dataset, "all")) %>% 
-  select(turbidity.initial:chlorophyll.initial, focal) %>% 
-  ggpairs(colour = "focal")
-
-add_theme_to_ggpairs(sizepairs)
-```
-
-
+`r sprintf("![img](figure/chem_ini_pairs_%s.png)", dataset)`
 

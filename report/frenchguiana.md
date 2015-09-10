@@ -9,12 +9,10 @@ These data were accessed on 10 September 2015
 
 ## Size variables
 
-![plot of chunk sizes](figure/frenchguiana__sizes-1.png) 
+![img](figure/size_pairs_frenchguiana.png)
 
 
 ## Chemical variables -- initial
 
-![plot of chunk chem_initial](figure/frenchguiana__chem_initial-1.png) 
-
-
+![img](figure/chem_ini_pairs_frenchguiana.png)
 

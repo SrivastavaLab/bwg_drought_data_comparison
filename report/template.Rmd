@@ -10,7 +10,7 @@ physical %>%
   
 ```
 
-### Size variables
+## Size variables
 
 ```{r sizes, warning=FALSE, message=FALSE, fig.height=10, fig.width=10}
 sizepairs <- physical %>% 
@@ -22,7 +22,7 @@ add_theme_to_ggpairs(sizepairs)
 ```
 
 
-### Chemical variables -- initial
+## Chemical variables -- initial
 
 ```{r chem_initial, warning=FALSE, message=FALSE, fig.height=10, fig.width=10}
 sizepairs <- physical %>% 
@@ -31,5 +31,18 @@ sizepairs <- physical %>%
   ggpairs(colour = "focal")
 
 add_theme_to_ggpairs(sizepairs)
+```
+
+#### Chemical variables to check
+
+```{r}
+set.seed(4812)
+physical %>% 
+  filter(site == dataset) %>% 
+  select(site_brom.id, turbidity.initial:chlorophyll.initial) %>% 
+  sample_n(3) %>% 
+  mutate(`*CONFIRMED*` = "    ") %>% 
+  as.data.frame %>% 
+  kable
 ```
 

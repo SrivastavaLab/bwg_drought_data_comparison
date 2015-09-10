@@ -4,6 +4,7 @@ packages:
   - bwgtools
   - GGally
   - rmarkdown
+  - knitr
 
 sources:
   - Rscripts/offline.R

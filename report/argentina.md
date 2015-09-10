@@ -16,7 +16,7 @@ physical %>%
 
 ![plot of chunk unnamed-chunk-1](figure/argentina__unnamed-chunk-1-1.png) 
 
-### Size variables
+## Size variables
 
 
 ```r
@@ -31,7 +31,7 @@ add_theme_to_ggpairs(sizepairs)
 ![plot of chunk sizes](figure/argentina__sizes-1.png) 
 
 
-### Chemical variables -- initial
+## Chemical variables -- initial
 
 
 ```r
@@ -44,4 +44,26 @@ add_theme_to_ggpairs(sizepairs)
 ```
 
 ![plot of chunk chem_initial](figure/argentina__chem_initial-1.png) 
+
+#### Chemical variables to check
+
+
+```r
+set.seed(4812)
+physical %>% 
+  filter(site == dataset) %>% 
+  select(site_brom.id, turbidity.initial:chlorophyll.initial) %>% 
+  sample_n(3) %>% 
+  mutate(`*CONFIRMED*` = "    ") %>% 
+  as.data.frame %>% 
+  kable
+```
+
+
+
+|site_brom.id | turbidity.initial| oxygen.percent.initial| oxygen.conc.initial| ph.initial| chlorophyll.initial|*CONFIRMED* |
+|:------------|-----------------:|----------------------:|-------------------:|----------:|-------------------:|:-----------|
+|argentina_19 |             104.9|                   18.0|                 7.4|       5.97|                  NA|            |
+|argentina_11 |             335.0|                    8.2|                 3.2|       6.39|                  NA|            |
+|argentina_6  |                NA|                    3.7|                 1.7|       6.92|                  NA|            |
 

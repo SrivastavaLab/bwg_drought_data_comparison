@@ -19,6 +19,26 @@ targets:
     
 {{/site_names}}
 
+## Make figures because this takes foreverrr
+
+{{#site_names}}
+  report/figure/size_pairs_{{site_name}}.png:
+    command: plot_size(physical, {{site_name}})
+    plot:
+      width: 700
+      height: 700
+    
+{{/site_names}}
+
+{{#site_names}}
+  report/figure/chem_ini_pairs_{{site_name}}.png:
+    command: plot_chem_ini(physical, {{site_name}})
+    plot:
+      width: 700
+      height: 700
+    
+{{/site_names}}
+
 ## create the knitr reports.
 {{#site_names}}
   report/{{site_name}}.md:
@@ -29,6 +49,8 @@ targets:
     depends:
       - dataset: {{site_name}}
       - physical
+      - report/figure/size_pairs_{{site_name}}.png
+      - report/figure/chem_ini_pairs_{{site_name}}.png
     
 {{/site_names}}
 

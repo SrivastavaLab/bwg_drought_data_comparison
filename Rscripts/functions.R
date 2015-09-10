@@ -45,9 +45,21 @@ get_terr_abd <- function(){
 
 plot_size <- function(.physical, .dataset){
   ggp <- .physical %>% 
-    mutate(focal = ifelse(site == dataset, dataset, "all")) %>% 
+    mutate(focal = ifelse(site == .dataset, .dataset, "all")) %>% 
     select(maxvol:catchment.area, focal) %>% 
     ggpairs(colour = "focal")
   
-  add_theme_to_ggpairs(ggp)
+  out <- add_theme_to_ggpairs(ggp)
+  print(out)
+}
+
+
+plot_chem_ini <- function(.physical, .dataset){
+  ggp <- .physical %>% 
+    mutate(focal = ifelse(site == .dataset, .dataset, "all")) %>% 
+    select(turbidity.initial:chlorophyll.initial, focal) %>% 
+    ggpairs(colour = "focal")
+  
+  out <- add_theme_to_ggpairs(ggp)
+  print(out)
 }

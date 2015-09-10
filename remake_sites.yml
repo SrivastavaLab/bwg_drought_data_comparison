@@ -55,6 +55,94 @@ targets:
     command: return(I("costarica"))
     
 
+## Make figures because this takes foreverrr
+
+  report/figure/size_pairs_argentina.png:
+    command: plot_size(physical, argentina)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/size_pairs_cardoso.png:
+    command: plot_size(physical, cardoso)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/size_pairs_colombia.png:
+    command: plot_size(physical, colombia)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/size_pairs_frenchguiana.png:
+    command: plot_size(physical, frenchguiana)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/size_pairs_macae.png:
+    command: plot_size(physical, macae)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/size_pairs_puertorico.png:
+    command: plot_size(physical, puertorico)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/size_pairs_costarica.png:
+    command: plot_size(physical, costarica)
+    plot:
+      width: 700
+      height: 700
+    
+
+  report/figure/chem_ini_pairs_argentina.png:
+    command: plot_chem_ini(physical, argentina)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/chem_ini_pairs_cardoso.png:
+    command: plot_chem_ini(physical, cardoso)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/chem_ini_pairs_colombia.png:
+    command: plot_chem_ini(physical, colombia)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/chem_ini_pairs_frenchguiana.png:
+    command: plot_chem_ini(physical, frenchguiana)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/chem_ini_pairs_macae.png:
+    command: plot_chem_ini(physical, macae)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/chem_ini_pairs_puertorico.png:
+    command: plot_chem_ini(physical, puertorico)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/chem_ini_pairs_costarica.png:
+    command: plot_chem_ini(physical, costarica)
+    plot:
+      width: 700
+      height: 700
+    
+
 ## create the knitr reports.
   report/argentina.md:
     knitr:
@@ -64,6 +152,8 @@ targets:
     depends:
       - dataset: argentina
       - physical
+      - report/figure/size_pairs_argentina.png
+      - report/figure/chem_ini_pairs_argentina.png
     
   report/cardoso.md:
     knitr:
@@ -73,6 +163,8 @@ targets:
     depends:
       - dataset: cardoso
       - physical
+      - report/figure/size_pairs_cardoso.png
+      - report/figure/chem_ini_pairs_cardoso.png
     
   report/colombia.md:
     knitr:
@@ -82,6 +174,8 @@ targets:
     depends:
       - dataset: colombia
       - physical
+      - report/figure/size_pairs_colombia.png
+      - report/figure/chem_ini_pairs_colombia.png
     
   report/frenchguiana.md:
     knitr:
@@ -91,6 +185,8 @@ targets:
     depends:
       - dataset: frenchguiana
       - physical
+      - report/figure/size_pairs_frenchguiana.png
+      - report/figure/chem_ini_pairs_frenchguiana.png
     
   report/macae.md:
     knitr:
@@ -100,6 +196,8 @@ targets:
     depends:
       - dataset: macae
       - physical
+      - report/figure/size_pairs_macae.png
+      - report/figure/chem_ini_pairs_macae.png
     
   report/puertorico.md:
     knitr:
@@ -109,6 +207,8 @@ targets:
     depends:
       - dataset: puertorico
       - physical
+      - report/figure/size_pairs_puertorico.png
+      - report/figure/chem_ini_pairs_puertorico.png
     
   report/costarica.md:
     knitr:
@@ -118,6 +218,8 @@ targets:
     depends:
       - dataset: costarica
       - physical
+      - report/figure/size_pairs_costarica.png
+      - report/figure/chem_ini_pairs_costarica.png
     
 
 ## let us have PDFs!

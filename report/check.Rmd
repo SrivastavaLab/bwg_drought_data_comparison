@@ -1,0 +1,42 @@
+---
+fontsize: 12pt
+output:
+  pdf_document
+---
+
+# Data from `r dataset`
+
+These data were accessed on `r format(Sys.time(), '%d %B %Y')`
+
+## Size
+
+```{r echo = FALSE}
+set.seed(4812)
+physical %>% 
+  filter(site == dataset) %>% 
+  select(site_brom.id, maxvol:catchment.area) %>% 
+  sample_n(3) %>% 
+  mutate(`*CONFIRMED*` = "    ") %>% 
+  as.data.frame %>% 
+  kable
+```
+
+
+## Initial chemistry
+
+```{r echo = FALSE, results='asis'}
+set.seed(4812)
+physical %>% 
+  filter(site == dataset) %>% 
+  select(site_brom.id, turbidity.initial:chlorophyll.initial) %>% 
+  sample_n(3) %>% 
+  mutate(CONFIRMED = "    ") %>% 
+  as.data.frame %>% 
+  xtable %>% 
+  print(type = 'latex',
+          hline.after = 1:2,  # note we count the lines here.
+          floating = FALSE)
+```
+
+
+

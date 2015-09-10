@@ -5,7 +5,8 @@ output:
 ---
 
 
-# Data from frenchguiana
+
+# Confirmation Data from site **frenchguiana**
 
 These data were accessed on 10 September 2015
 
@@ -127,5 +128,28 @@ frenchguiana\_79 & 45.00 & 247.95 &      \\
 frenchguiana\_33 & 5.13 & 0.94 & 45.87 &      \\ 
    \hline
 frenchguiana\_79 & 3.04 & 0.81 & 44.97 &      \\ 
+   \hline
+\end{tabular}
+
+## Final Abundance of Aquatic Insects
+
+\begin{tabular}{llrl}
+ site & site\_brom.id & abundance & CONFIRMED \\ 
+  \hline frenchguiana & frenchguiana\_47 & 135.00 &      \\ 
+   \hline
+frenchguiana & frenchguiana\_42 & 224.00 &      \\ 
+   \hline
+frenchguiana & frenchguiana\_44 & 231.00 &      \\ 
+   \hline
+\end{tabular}
+
+## Final Abundance of Terrestrial Insects
+\begin{tabular}{llrl}
+ site & site\_brom.id & abundance & CONFIRMED \\ 
+  \hline frenchguiana & frenchguiana\_47 & 113.00 &      \\ 
+   \hline
+frenchguiana & frenchguiana\_42 & 104.00 &      \\ 
+   \hline
+frenchguiana & frenchguiana\_44 & 95.00 &      \\ 
    \hline
 \end{tabular}

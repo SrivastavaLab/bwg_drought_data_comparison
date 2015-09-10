@@ -5,7 +5,8 @@ output:
 ---
 
 
-# Data from colombia
+
+# Confirmation Data from site **colombia**
 
 These data were accessed on 10 September 2015
 
@@ -127,5 +128,28 @@ colombia\_10 & 135.00 & 1882.58 &      \\
 colombia\_9 & 6.90 & 0.68 & 46.42 &      \\ 
    \hline
 colombia\_10 & 5.83 & 0.76 & 45.43 &      \\ 
+   \hline
+\end{tabular}
+
+## Final Abundance of Aquatic Insects
+
+\begin{tabular}{llrl}
+ site & site\_brom.id & abundance & CONFIRMED \\ 
+  \hline colombia & colombia\_19 & 68.00 &      \\ 
+   \hline
+colombia & colombia\_17 & 14.00 &      \\ 
+   \hline
+colombia & colombia\_18 & 35.00 &      \\ 
+   \hline
+\end{tabular}
+
+## Final Abundance of Terrestrial Insects
+\begin{tabular}{llrl}
+ site & site\_brom.id & abundance & CONFIRMED \\ 
+  \hline colombia & colombia\_19 &  &      \\ 
+   \hline
+colombia & colombia\_17 &  &      \\ 
+   \hline
+colombia & colombia\_18 &  &      \\ 
    \hline
 \end{tabular}

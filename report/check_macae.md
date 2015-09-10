@@ -5,7 +5,8 @@ output:
 ---
 
 
-# Data from macae
+
+# Confirmation Data from site **macae**
 
 These data were accessed on 10 September 2015
 
@@ -127,5 +128,28 @@ macae\_B5 & 350.00 & 730.00 &      \\
 macae\_B28 & 18.31 & 0.42 &  &      \\ 
    \hline
 macae\_B5 & 45.55 & 0.51 &  &      \\ 
+   \hline
+\end{tabular}
+
+## Final Abundance of Aquatic Insects
+
+\begin{tabular}{llrl}
+ site & site\_brom.id & abundance & CONFIRMED \\ 
+  \hline macae & macae\_B27 & 413.00 &      \\ 
+   \hline
+macae & macae\_B23 & 264.00 &      \\ 
+   \hline
+macae & macae\_B24 & 357.00 &      \\ 
+   \hline
+\end{tabular}
+
+## Final Abundance of Terrestrial Insects
+\begin{tabular}{llrl}
+ site & site\_brom.id & abundance & CONFIRMED \\ 
+  \hline macae & macae\_B27 &  &      \\ 
+   \hline
+macae & macae\_B22 &  &      \\ 
+   \hline
+macae & macae\_B24 &  &      \\ 
    \hline
 \end{tabular}

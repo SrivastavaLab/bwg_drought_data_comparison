@@ -5,7 +5,8 @@ output:
 ---
 
 
-# Data from cardoso
+
+# Confirmation Data from site **cardoso**
 
 These data were accessed on 10 September 2015
 
@@ -127,5 +128,28 @@ cardoso\_DEC35 & 564.00 & 528.00 &      \\
 cardoso\_DEC53 & 0.18 & 0.58 &  &      \\ 
    \hline
 cardoso\_DEC35 & 4.78 & 0.55 &  &      \\ 
+   \hline
+\end{tabular}
+
+## Final Abundance of Aquatic Insects
+
+\begin{tabular}{llrl}
+ site & site\_brom.id & abundance & CONFIRMED \\ 
+  \hline cardoso & cardoso\_DEC22 & 484.00 &      \\ 
+   \hline
+cardoso & cardoso\_DEC17 & 554.00 &      \\ 
+   \hline
+cardoso & cardoso\_DEC21 & 383.00 &      \\ 
+   \hline
+\end{tabular}
+
+## Final Abundance of Terrestrial Insects
+\begin{tabular}{llrl}
+ site & site\_brom.id & abundance & CONFIRMED \\ 
+  \hline cardoso & cardoso\_DEC 22A & 50.00 &      \\ 
+   \hline
+cardoso & cardoso\_DEC17 & 3.00 &      \\ 
+   \hline
+cardoso & cardoso\_DEC22 & 2.00 &      \\ 
    \hline
 \end{tabular}

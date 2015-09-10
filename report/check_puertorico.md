@@ -5,7 +5,8 @@ output:
 ---
 
 
-# Data from puertorico
+
+# Confirmation Data from site **puertorico**
 
 These data were accessed on 10 September 2015
 
@@ -127,5 +128,28 @@ puertorico\_27 & 27.00 & 429.35 &      \\
 puertorico\_6 & 0.60 & 0.63 & 41.32 &      \\ 
    \hline
 puertorico\_27 & 3.14 & 0.65 & 46.30 &      \\ 
+   \hline
+\end{tabular}
+
+## Final Abundance of Aquatic Insects
+
+\begin{tabular}{llrl}
+ site & site\_brom.id & abundance & CONFIRMED \\ 
+  \hline puertorico & puertorico\_19 & 54.00 &      \\ 
+   \hline
+puertorico & puertorico\_17 & 48.00 &      \\ 
+   \hline
+puertorico & puertorico\_18 & 121.00 &      \\ 
+   \hline
+\end{tabular}
+
+## Final Abundance of Terrestrial Insects
+\begin{tabular}{llrl}
+ site & site\_brom.id & abundance & CONFIRMED \\ 
+  \hline puertorico & puertorico\_19 & 51.00 &      \\ 
+   \hline
+puertorico & puertorico\_17 & 39.00 &      \\ 
+   \hline
+puertorico & puertorico\_18 & 41.00 &      \\ 
    \hline
 \end{tabular}

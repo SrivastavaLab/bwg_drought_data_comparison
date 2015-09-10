@@ -5,7 +5,8 @@ output:
 ---
 
 
-# Data from argentina
+
+# Confirmation Data from site **argentina**
 
 These data were accessed on 10 September 2015
 
@@ -127,5 +128,28 @@ argentina\_6 & 43.00 &  &      \\
 argentina\_11 &  &  &  &      \\ 
    \hline
 argentina\_6 &  &  &  &      \\ 
+   \hline
+\end{tabular}
+
+## Final Abundance of Aquatic Insects
+
+\begin{tabular}{llrl}
+ site & site\_brom.id & abundance & CONFIRMED \\ 
+  \hline argentina & argentina\_19 & 14.00 &      \\ 
+   \hline
+argentina & argentina\_17 & 23.00 &      \\ 
+   \hline
+argentina & argentina\_18 & 26.00 &      \\ 
+   \hline
+\end{tabular}
+
+## Final Abundance of Terrestrial Insects
+\begin{tabular}{llrl}
+ site & site\_brom.id & abundance & CONFIRMED \\ 
+  \hline argentina & argentina\_19 & 10.00 &      \\ 
+   \hline
+argentina & argentina\_17 & 11.00 &      \\ 
+   \hline
+argentina & argentina\_18 & 23.00 &      \\ 
    \hline
 \end{tabular}

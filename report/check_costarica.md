@@ -5,7 +5,8 @@ output:
 ---
 
 
-# Data from costarica
+
+# Confirmation Data from site **costarica**
 
 These data were accessed on 10 September 2015
 
@@ -127,5 +128,28 @@ costarica\_10 & 57.00 & 500.00 &      \\
 costarica\_36 & 12.18 & 0.46 & 44.04 &      \\ 
    \hline
 costarica\_10 & 5.83 & 0.40 & 43.72 &      \\ 
+   \hline
+\end{tabular}
+
+## Final Abundance of Aquatic Insects
+
+\begin{tabular}{llrl}
+ site & site\_brom.id & abundance & CONFIRMED \\ 
+  \hline costarica & costarica\_2 & 43.00 &      \\ 
+   \hline
+costarica & costarica\_18 & 34.00 &      \\ 
+   \hline
+costarica & costarica\_19 & 41.00 &      \\ 
+   \hline
+\end{tabular}
+
+## Final Abundance of Terrestrial Insects
+\begin{tabular}{llrl}
+ site & site\_brom.id & abundance & CONFIRMED \\ 
+  \hline costarica & costarica\_2 & 1.00 &      \\ 
+   \hline
+costarica & costarica\_17 & 3.00 &      \\ 
+   \hline
+costarica & costarica\_18 & 1.00 &      \\ 
    \hline
 \end{tabular}

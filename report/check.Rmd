@@ -5,9 +5,16 @@ output:
 ---
 
 ```{r, echo=FALSE}
-table_of_three <- function(data_to_check){
+set.seed(4812)
+samp_brom <- physical %>% 
+  filter(site == dataset) %>% 
+  sample_n(3) %>% 
+  .[["site_brom.id"]]
+
+
+table_of_three <- function(data_to_check, samp = samp_brom){
   three_data <- data_to_check %>% 
-    sample_n(3) %>% 
+    filter(site_brom.id %in% samp) %>% 
     mutate(CONFIRMED = "    ") %>% 
     as.data.frame
   
@@ -34,8 +41,8 @@ aqua <- aqua_abd %>%
   filter(site == dataset)
 
 terr <- terr_abd %>% 
-  filter(site == dataset)
-
+  filter(site == dataset) %>% 
+  right_join(site_phys[,"site_brom.id"])
 ```
 
 # Confirmation Data from site **`r dataset`**
@@ -45,7 +52,6 @@ These data were accessed on `r format(Sys.time(), '%d %B %Y')`
 ## Size
 
 ```{r echo = FALSE, results='asis'}
-set.seed(4812)
 site_phys %>% 
   select(site_brom.id, maxvol:catchment.area) %>% 
   table_of_three
@@ -55,7 +61,6 @@ site_phys %>%
 ## Initial chemistry
 
 ```{r echo = FALSE, results='asis'}
-set.seed(4812)
 site_phys %>% 
   select(site_brom.id, turbidity.initial:oxygen.conc.initial) %>% 
   table_of_three
@@ -63,7 +68,7 @@ site_phys %>%
 
 
 ```{r echo = FALSE, results='asis'}
-set.seed(4812)
+
 site_phys %>% 
   select(site_brom.id, ph.initial:chlorophyll.initial) %>% 
   table_of_three
@@ -71,7 +76,7 @@ site_phys %>%
 
 ## Initial Leafpacks
 ```{r echo = FALSE, results='asis'}
-set.seed(4812)
+
 site_phys %>% 
   select(site_brom.id,
          leafpack1.species1.mass.initial:leafpack2.species1.mass.initial) %>%
@@ -79,7 +84,7 @@ site_phys %>%
 ```
 
 ```{r echo = FALSE, results='asis'}
-set.seed(4812)
+
 site_phys %>% 
   select(site_brom.id,
          leafpack1.species2.mass.initial:leafpack2.species2.mass.initial) %>%
@@ -88,7 +93,7 @@ site_phys %>%
 
 ## Final Chemistry
 ```{r echo = FALSE, results='asis'}
-set.seed(4812)
+
 site_phys %>% 
   select(site_brom.id,
          co2.final:turbidity.final) %>%
@@ -97,7 +102,7 @@ site_phys %>%
 
 
 ```{r echo = FALSE, results='asis'}
-set.seed(4812)
+
 site_phys %>% 
   select(site_brom.id,
          oxygen.percent.final:chlorophyll.final) %>%
@@ -106,7 +111,7 @@ site_phys %>%
 
 ## Final Leafpacks
 ```{r echo = FALSE, results='asis'}
-set.seed(4812)
+
 site_phys %>% 
   select(site_brom.id,
          leafpack1.species1.mass.final:leafpack2.species1.mass.final) %>%
@@ -114,7 +119,7 @@ site_phys %>%
 ```
 
 ```{r echo = FALSE, results='asis'}
-set.seed(4812)
+
 site_phys %>% 
   select(site_brom.id,
          leafpack1.species2.mass.final:leafpack2.species2.mass.final) %>%
@@ -123,7 +128,7 @@ site_phys %>%
 
 ## Final Ecosystem
 ```{r echo = FALSE, results='asis'}
-set.seed(4812)
+
 site_phys %>% 
   select(site_brom.id,
          water.volume.final:fpom.final) %>%
@@ -131,7 +136,7 @@ site_phys %>%
 ```
 
 ```{r echo = FALSE, results='asis'}
-set.seed(4812)
+
 site_phys %>% 
   select(site_brom.id,
          n15.bromeliad.final:final.bromeliad.percentc) %>%
@@ -141,14 +146,14 @@ site_phys %>%
 ## Final Abundance of Aquatic Insects
 
 ```{r echo = FALSE, results='asis'}
-set.seed(4812)
+
 aqua %>%
   table_of_three
 ```
 
 ## Final Abundance of Terrestrial Insects
 ```{r echo = FALSE, results='asis'}
-set.seed(4812)
+
 terr %>%
   table_of_three
 ```

@@ -39,6 +39,25 @@ targets:
     
 {{/site_names}}
 
+{{#site_names}}
+  report/figure/chem_fin_pairs_{{site_name}}.png:
+    command: plot_chem_fin(physical, {{site_name}})
+    plot:
+      width: 700
+      height: 700
+    
+{{/site_names}}
+
+
+{{#site_names}}
+  report/figure/ecos_fin_pairs_{{site_name}}.png:
+    command: plot_ecos_fin(physical, {{site_name}})
+    plot:
+      width: 700
+      height: 700
+    
+{{/site_names}}
+
 ## create the knitr reports.
 {{#site_names}}
   report/{{site_name}}.md:
@@ -48,8 +67,7 @@ targets:
     depends:
       - dataset: {{site_name}}
       - physical
-      - report/figure/size_pairs_{{site_name}}.png
-      - report/figure/chem_ini_pairs_{{site_name}}.png
+      
     
 {{/site_names}}
 
@@ -61,6 +79,8 @@ targets:
     depends:
       - report/figure/size_pairs_{{site_name}}.png
       - report/figure/chem_ini_pairs_{{site_name}}.png
+      - report/figure/chem_fin_pairs_{{site_name}}.png
+      - report/figure/ecos_fin_pairs_{{site_name}}.png
     
 {{/site_names}}
 

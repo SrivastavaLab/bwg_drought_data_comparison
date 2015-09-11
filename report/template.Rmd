@@ -18,3 +18,11 @@ These data were accessed on `r format(Sys.time(), '%d %B %Y')`
 
 `r sprintf("![img](figure/chem_ini_pairs_%s.png)", dataset)`
 
+## Chemical variables -- final
+
+`r sprintf("![img](figure/chem_fin_pairs_%s.png)", dataset)`
+
+## Ecosystem variables -- final
+
+`r sprintf("![img](figure/ecos_fin_pairs_%s.png)", dataset)`
+

@@ -62,3 +62,21 @@ plot_chem_ini <- function(.physical, .dataset){
   out <- add_theme_to_ggpairs(ggp)
   print(out)
 }
+
+plot_chem_fin <- function(.physical, .dataset){
+  ggp <- .physical %>% 
+    mutate(focal = ifelse(site == .dataset, .dataset, "all")) %>% 
+    select(co2.final:chlorophyll.final, focal) %>% 
+    ggpairs(colour = "focal")
+  out <- add_theme_to_ggpairs(ggp)
+  print(out)
+}
+
+plot_ecos_fin <- function(.physical, .dataset){
+  ggp <- .physical %>% 
+    mutate(focal = ifelse(site == .dataset, .dataset, "all")) %>% 
+    select(water.volume.final:final.bromeliad.percentc, focal) %>% 
+    ggpairs(colour = "focal")
+  out <- add_theme_to_ggpairs(ggp)
+  print(out)
+}

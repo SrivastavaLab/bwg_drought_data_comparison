@@ -143,6 +143,93 @@ targets:
       height: 700
     
 
+  report/figure/chem_fin_pairs_argentina.png:
+    command: plot_chem_fin(physical, argentina)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/chem_fin_pairs_cardoso.png:
+    command: plot_chem_fin(physical, cardoso)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/chem_fin_pairs_colombia.png:
+    command: plot_chem_fin(physical, colombia)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/chem_fin_pairs_frenchguiana.png:
+    command: plot_chem_fin(physical, frenchguiana)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/chem_fin_pairs_macae.png:
+    command: plot_chem_fin(physical, macae)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/chem_fin_pairs_puertorico.png:
+    command: plot_chem_fin(physical, puertorico)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/chem_fin_pairs_costarica.png:
+    command: plot_chem_fin(physical, costarica)
+    plot:
+      width: 700
+      height: 700
+    
+
+
+  report/figure/ecos_fin_pairs_argentina.png:
+    command: plot_ecos_fin(physical, argentina)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/ecos_fin_pairs_cardoso.png:
+    command: plot_ecos_fin(physical, cardoso)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/ecos_fin_pairs_colombia.png:
+    command: plot_ecos_fin(physical, colombia)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/ecos_fin_pairs_frenchguiana.png:
+    command: plot_ecos_fin(physical, frenchguiana)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/ecos_fin_pairs_macae.png:
+    command: plot_ecos_fin(physical, macae)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/ecos_fin_pairs_puertorico.png:
+    command: plot_ecos_fin(physical, puertorico)
+    plot:
+      width: 700
+      height: 700
+    
+  report/figure/ecos_fin_pairs_costarica.png:
+    command: plot_ecos_fin(physical, costarica)
+    plot:
+      width: 700
+      height: 700
+    
+
 ## create the knitr reports.
   report/argentina.md:
     knitr:
@@ -151,8 +238,7 @@ targets:
     depends:
       - dataset: argentina
       - physical
-      - report/figure/size_pairs_argentina.png
-      - report/figure/chem_ini_pairs_argentina.png
+      
     
   report/cardoso.md:
     knitr:
@@ -161,8 +247,7 @@ targets:
     depends:
       - dataset: cardoso
       - physical
-      - report/figure/size_pairs_cardoso.png
-      - report/figure/chem_ini_pairs_cardoso.png
+      
     
   report/colombia.md:
     knitr:
@@ -171,8 +256,7 @@ targets:
     depends:
       - dataset: colombia
       - physical
-      - report/figure/size_pairs_colombia.png
-      - report/figure/chem_ini_pairs_colombia.png
+      
     
   report/frenchguiana.md:
     knitr:
@@ -181,8 +265,7 @@ targets:
     depends:
       - dataset: frenchguiana
       - physical
-      - report/figure/size_pairs_frenchguiana.png
-      - report/figure/chem_ini_pairs_frenchguiana.png
+      
     
   report/macae.md:
     knitr:
@@ -191,8 +274,7 @@ targets:
     depends:
       - dataset: macae
       - physical
-      - report/figure/size_pairs_macae.png
-      - report/figure/chem_ini_pairs_macae.png
+      
     
   report/puertorico.md:
     knitr:
@@ -201,8 +283,7 @@ targets:
     depends:
       - dataset: puertorico
       - physical
-      - report/figure/size_pairs_puertorico.png
-      - report/figure/chem_ini_pairs_puertorico.png
+      
     
   report/costarica.md:
     knitr:
@@ -211,8 +292,7 @@ targets:
     depends:
       - dataset: costarica
       - physical
-      - report/figure/size_pairs_costarica.png
-      - report/figure/chem_ini_pairs_costarica.png
+      
     
 
 ## let us have PDFs!
@@ -222,42 +302,56 @@ targets:
     depends:
       - report/figure/size_pairs_argentina.png
       - report/figure/chem_ini_pairs_argentina.png
+      - report/figure/chem_fin_pairs_argentina.png
+      - report/figure/ecos_fin_pairs_argentina.png
     
   report/cardoso.pdf:
     command: render("report/cardoso.md", output_format = I("pdf_document"))
     depends:
       - report/figure/size_pairs_cardoso.png
       - report/figure/chem_ini_pairs_cardoso.png
+      - report/figure/chem_fin_pairs_cardoso.png
+      - report/figure/ecos_fin_pairs_cardoso.png
     
   report/colombia.pdf:
     command: render("report/colombia.md", output_format = I("pdf_document"))
     depends:
       - report/figure/size_pairs_colombia.png
       - report/figure/chem_ini_pairs_colombia.png
+      - report/figure/chem_fin_pairs_colombia.png
+      - report/figure/ecos_fin_pairs_colombia.png
     
   report/frenchguiana.pdf:
     command: render("report/frenchguiana.md", output_format = I("pdf_document"))
     depends:
       - report/figure/size_pairs_frenchguiana.png
       - report/figure/chem_ini_pairs_frenchguiana.png
+      - report/figure/chem_fin_pairs_frenchguiana.png
+      - report/figure/ecos_fin_pairs_frenchguiana.png
     
   report/macae.pdf:
     command: render("report/macae.md", output_format = I("pdf_document"))
     depends:
       - report/figure/size_pairs_macae.png
       - report/figure/chem_ini_pairs_macae.png
+      - report/figure/chem_fin_pairs_macae.png
+      - report/figure/ecos_fin_pairs_macae.png
     
   report/puertorico.pdf:
     command: render("report/puertorico.md", output_format = I("pdf_document"))
     depends:
       - report/figure/size_pairs_puertorico.png
       - report/figure/chem_ini_pairs_puertorico.png
+      - report/figure/chem_fin_pairs_puertorico.png
+      - report/figure/ecos_fin_pairs_puertorico.png
     
   report/costarica.pdf:
     command: render("report/costarica.md", output_format = I("pdf_document"))
     depends:
       - report/figure/size_pairs_costarica.png
       - report/figure/chem_ini_pairs_costarica.png
+      - report/figure/chem_fin_pairs_costarica.png
+      - report/figure/ecos_fin_pairs_costarica.png
     
 
 ## MOREOVER let us have pdf reports for each site

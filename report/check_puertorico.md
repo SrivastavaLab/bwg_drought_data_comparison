@@ -5,9 +5,6 @@ output:
 ---
 
 
-```
-## Joining by: "site_brom.id"
-```
 
 # Confirmation Data from site **puertorico**
 

@@ -8,7 +8,7 @@ output:
 
 # Confirmation Data from site **cardoso**
 
-These data were accessed on 11 September 2015
+These data were accessed on 14 September 2015
 
 ## Size
 
@@ -146,10 +146,10 @@ cardoso & cardoso\_DEC53 & 658.00 &      \\
 ## Final Abundance of Terrestrial Insects
 \begin{tabular}{llrl}
  site & site\_brom.id & abundance & CONFIRMED \\ 
-  \hline cardoso & cardoso\_DEC53 & 2.00 &      \\ 
+  \hline cardoso & cardoso\_DEC53 & 38.00 &      \\ 
    \hline
-cardoso & cardoso\_DEC35 & 2.00 &      \\ 
+cardoso & cardoso\_DEC35 & 29.00 &      \\ 
    \hline
-cardoso & cardoso\_DEC31 & 5.00 &      \\ 
+cardoso & cardoso\_DEC31 & 47.00 &      \\ 
    \hline
 \end{tabular}

@@ -8,15 +8,15 @@ output:
 
 # Confirmation Data from site **colombia**
 
-These data were accessed on 11 September 2015
+These data were accessed on 14 September 2015
 
 ## Size
 
 \begin{tabular}{lrrrrl}
  site\_brom.id & maxvol & leaf.number & mean.diam & catchment.area & CONFIRMED \\ 
-  \hline colombia\_9 & 358.00 & 32.00 & 85.08 & 1440.44 &      \\ 
+  \hline colombia\_9 & 358.00 & 32.00 & 85.08 & 2264.28 &      \\ 
    \hline
-colombia\_10 & 354.00 & 20.00 & 66.45 & 2572.00 &      \\ 
+colombia\_10 & 354.00 & 20.00 & 66.45 & 1424.01 &      \\ 
    \hline
 colombia\_11 & 202.00 & 20.00 & 117.82 & 1617.89 &      \\ 
    \hline

@@ -8,17 +8,17 @@ output:
 
 # Confirmation Data from site **argentina**
 
-These data were accessed on 11 September 2015
+These data were accessed on 14 September 2015
 
 ## Size
 
 \begin{tabular}{lrrrrl}
  site\_brom.id & maxvol & leaf.number & mean.diam & catchment.area & CONFIRMED \\ 
-  \hline argentina\_11 & 415.00 &  & 70.50 & 1467.83 &      \\ 
+  \hline argentina\_11 & 415.00 & 38.00 & 70.50 & 1467.83 &      \\ 
    \hline
-argentina\_6 & 210.00 &  & 52.00 & 504.96 &      \\ 
+argentina\_6 & 210.00 & 28.00 & 52.00 & 504.96 &      \\ 
    \hline
-argentina\_19 & 430.00 &  & 53.00 & 1189.82 &      \\ 
+argentina\_19 & 430.00 & 28.00 & 53.00 & 1189.82 &      \\ 
    \hline
 \end{tabular}
 
@@ -123,11 +123,11 @@ argentina\_19 & 31.00 &  &      \\
 
 \begin{tabular}{lrrrl}
  site\_brom.id & n15.bromeliad.final & final.bromeliad.percentn & final.bromeliad.percentc & CONFIRMED \\ 
-  \hline argentina\_11 &  &  &  &      \\ 
+  \hline argentina\_11 & 25.56 & 0.48 &  &      \\ 
    \hline
-argentina\_6 &  &  &  &      \\ 
+argentina\_6 & 20.32 & 0.56 &  &      \\ 
    \hline
-argentina\_19 &  &  &  &      \\ 
+argentina\_19 & 18.11 & 0.61 &  &      \\ 
    \hline
 \end{tabular}
 

@@ -1,0 +1,46 @@
+---
+fontsize: 15pt
+output:
+  pdf_document
+---
+
+```{r, echo=FALSE, message=FALSE}
+
+table_of_three <- function(data_to_check){
+  three_data <- data_to_check %>% 
+    mutate(CONFIRMED = "    ") %>% 
+    as.data.frame
+  
+  boldednames <- three_data
+  
+  #names(boldednames) <- sprintf("\\textbf{%s}", names(boldednames))
+  
+  boldednames %>% 
+  xtable %>% 
+  print(type = 'latex',
+        #sanitize.text.function = identity,
+          # tabular.environment = "longtable", 
+          hline.after = 1:30,  # note we count the lines here.
+          floating = FALSE, include.rownames = FALSE,
+          add.to.row = list(pos = list(0),
+                            command = c("\\hline ")),
+          comment = FALSE)
+} 
+
+site_phys <- physical %>% 
+  filter(site == dataset)
+
+```
+
+# Confirmation Data from site **`r dataset`**
+
+These data were accessed on `r format(Sys.time(), '%d %B %Y')`
+
+## Treatments
+
+```{r echo = FALSE, results='asis'}
+site_phys %>% 
+  select(site_brom.id:trt.name) %>% 
+  table_of_three
+```
+

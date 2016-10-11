@@ -31,6 +31,22 @@ targets:
       - report/check_puertorico.pdf
       - report/check_costarica.md
       - report/check_costarica.pdf
+  trt_checks:
+    depends:
+      - report/trt_checkargentina.md
+      - report/trt_checkargentina.pdf
+      - report/trt_checkcardoso.md
+      - report/trt_checkcardoso.pdf
+      - report/trt_checkcolombia.md
+      - report/trt_checkcolombia.pdf
+      - report/trt_checkfrenchguiana.md
+      - report/trt_checkfrenchguiana.pdf
+      - report/trt_checkmacae.md
+      - report/trt_checkmacae.pdf
+      - report/trt_checkpuertorico.md
+      - report/trt_checkpuertorico.pdf
+      - report/trt_checkcostarica.md
+      - report/trt_checkcostarica.pdf
 
 ## list the names of sites
   argentina:
@@ -436,25 +452,89 @@ targets:
       - terr_abd
     
 
-  report/check_argentina.pdf:
-    command: render("report/check_argentina.md", output_format = I("pdf_document"))
+  report/trt_checkargentina.pdf:
+    command: render("report/trt_checkargentina.md", output_format = I("pdf_document"))
     
-  report/check_cardoso.pdf:
-    command: render("report/check_cardoso.md", output_format = I("pdf_document"))
+  report/trt_checkcardoso.pdf:
+    command: render("report/trt_checkcardoso.md", output_format = I("pdf_document"))
     
-  report/check_colombia.pdf:
-    command: render("report/check_colombia.md", output_format = I("pdf_document"))
+  report/trt_checkcolombia.pdf:
+    command: render("report/trt_checkcolombia.md", output_format = I("pdf_document"))
     
-  report/check_frenchguiana.pdf:
-    command: render("report/check_frenchguiana.md", output_format = I("pdf_document"))
+  report/trt_checkfrenchguiana.pdf:
+    command: render("report/trt_checkfrenchguiana.md", output_format = I("pdf_document"))
     
-  report/check_macae.pdf:
-    command: render("report/check_macae.md", output_format = I("pdf_document"))
+  report/trt_checkmacae.pdf:
+    command: render("report/trt_checkmacae.md", output_format = I("pdf_document"))
     
-  report/check_puertorico.pdf:
-    command: render("report/check_puertorico.md", output_format = I("pdf_document"))
+  report/trt_checkpuertorico.pdf:
+    command: render("report/trt_checkpuertorico.md", output_format = I("pdf_document"))
     
-  report/check_costarica.pdf:
-    command: render("report/check_costarica.md", output_format = I("pdf_document"))
+  report/trt_checkcostarica.pdf:
+    command: render("report/trt_checkcostarica.md", output_format = I("pdf_document"))
+    
+
+  report/trt_checkargentina.md:
+    knitr:
+      input: report/trt_check.Rmd
+      chdir: true
+    depends:
+      - dataset: argentina
+      - physical
+      
+    
+  report/trt_checkcardoso.md:
+    knitr:
+      input: report/trt_check.Rmd
+      chdir: true
+    depends:
+      - dataset: cardoso
+      - physical
+      
+    
+  report/trt_checkcolombia.md:
+    knitr:
+      input: report/trt_check.Rmd
+      chdir: true
+    depends:
+      - dataset: colombia
+      - physical
+      
+    
+  report/trt_checkfrenchguiana.md:
+    knitr:
+      input: report/trt_check.Rmd
+      chdir: true
+    depends:
+      - dataset: frenchguiana
+      - physical
+      
+    
+  report/trt_checkmacae.md:
+    knitr:
+      input: report/trt_check.Rmd
+      chdir: true
+    depends:
+      - dataset: macae
+      - physical
+      
+    
+  report/trt_checkpuertorico.md:
+    knitr:
+      input: report/trt_check.Rmd
+      chdir: true
+    depends:
+      - dataset: puertorico
+      - physical
+      
+    
+  report/trt_checkcostarica.md:
+    knitr:
+      input: report/trt_check.Rmd
+      chdir: true
+    depends:
+      - dataset: costarica
+      - physical
+      
     
 

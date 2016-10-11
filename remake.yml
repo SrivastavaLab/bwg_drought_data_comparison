@@ -15,6 +15,7 @@ targets:
     depends:
       - reports
       - checks
+      - trt_checks
 
   physical:
     command: combine_tab(sheetname = I("bromeliad.physical"))

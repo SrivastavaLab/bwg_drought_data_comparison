@@ -11,6 +11,12 @@ targets:
       - report/check_{{site_name}}.md
       - report/check_{{site_name}}.pdf
 {{/site_names}}    
+  trt_checks:
+    depends:
+{{#site_names}}
+      - report/trt_check{{site_name}}.md
+      - report/trt_check{{site_name}}.pdf
+{{/site_names}} 
 
 ## list the names of sites
 {{#site_names}}
@@ -103,7 +109,19 @@ targets:
 {{/site_names}}
 
 {{#site_names}}
-  report/check_{{site_name}}.pdf:
-    command: render("report/check_{{site_name}}.md", output_format = I("pdf_document"))
+  report/trt_check{{site_name}}.pdf:
+    command: render("report/trt_check{{site_name}}.md", output_format = I("pdf_document"))
+    
+{{/site_names}}
+
+{{#site_names}}
+  report/trt_check{{site_name}}.md:
+    knitr:
+      input: report/trt_check.Rmd
+      chdir: true
+    depends:
+      - dataset: {{site_name}}
+      - physical
+      
     
 {{/site_names}}
